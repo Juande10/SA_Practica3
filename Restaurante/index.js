@@ -27,8 +27,6 @@ app.post('/nuevo_pedido', (req, res) => {
                 "id": pedidos["pedidos"].length,
             })
             .then(response => {
-                //console.log(response.data.url);
-                //console.log(response.data.explanation);
                 pedidos["pedidos"][pedidos["pedidos"].length-1].estado = "Enviada al repartidor"
                 console.log("Pedido enviado al repartidor")
             })

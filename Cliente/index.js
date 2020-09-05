@@ -13,20 +13,18 @@ function waitForUserInput() {
           rl.close();
       } else {
             if(answer == "1"){
-                axios.post('http://localhost:4000/nuevo_pedido',{
+                axios.post('http://localhost:3002/nuevo_pedido',{
                     "descripcion": "Una soda",
                 })
                 .then(response => {
                     console.log("Su pedido es el numero: " + response.data["id"])
                     pedido = response.data["id"];
-                    console.log(pedido);
                 })
                 .catch(error => {
                     console.log(error);
                 })
             }else if(answer == "2"){
-                console.log(pedido);
-                axios.post('http://localhost:4000/estado_pedido',{
+                axios.post('http://localhost:3002/estado_pedido',{
                     "id": pedido,
                 })
                 .then(response => {

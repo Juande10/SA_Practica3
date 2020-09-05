@@ -18,7 +18,6 @@ var pedidos = {
 /*URL para recibir pedido como repartidor*/ 
 app.post('/nuevo_pedido', (req, res) => {
     let body = req.body
-    console.log("Pedido recibido")
     pedidos["pedidos"].push({
         "estado":"En transito",
         "id": body.id
@@ -30,7 +29,6 @@ app.post('/nuevo_pedido', (req, res) => {
             }
         }}
     , 5000);
-    console.log("Pedido entregado")
     res.send({
         "status":"OK",
     })
